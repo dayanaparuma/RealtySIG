@@ -214,9 +214,14 @@
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
+        var wmsLayer = L.tileLayer.wms('http://wsidesc.cali.gov.co:8081/geoserver/wms?service=WMS&version=1.1.0', {layers:
+        'idesc:mc_comunas'}).addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'vulne_acuiferos<br /><table><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_ALTA0.png" /></td><td>ALTA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_BAJA1.png" /></td><td>BAJA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_BAJAAMODERADA2.png" /></td><td>BAJA A MODERADA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_EXTREMA3.png" /></td><td>EXTREMA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_MODERADA4.png" /></td><td>MODERADA</td></tr></table>': layer_vulne_acuiferos_1,"Google Maps": layer_GoogleMaps_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'vulne_acuiferos<br /><table><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_ALTA0.png" /></td><td>ALTA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_BAJA1.png" /></td><td>BAJA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_BAJAAMODERADA2.png" /></td><td>BAJA A MODERADA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_EXTREMA3.png" /></td><td>EXTREMA</td></tr><tr><td style="text-align: center;"><img src="legend/vulne_acuiferos_1_MODERADA4.png" /></td><td>MODERADA</td></tr></table>': layer_vulne_acuiferos_1,"OSM Standard": layer_OSMStandard_0, "Sitio construccion": marker, "Comunas":wmsLayer,},{collapsed:false}).addTo(map);
         setBounds();
+        L.marker([3.431078, -76.510999]).addTo(mymap)
+		  .bindPopup("<b>Sitio de construcción!</b><br />Ptar.").openPopup();    
+        var popup = L.popup();
         </script>
     </body>
 </html>
